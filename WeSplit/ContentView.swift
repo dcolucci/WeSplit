@@ -1,3 +1,4 @@
+// progress: https://www.hackingwithswift.com/books/ios-swiftui/creating-a-form
 //
 //  ContentView.swift
 //  WeSplit
@@ -10,7 +11,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        NavigationView {
+            Form {
+                Section {
+                    Text("Hello World!")
+                }
+            }
+            .navigationBarTitle(Text("What's good New York"), displayMode: .inline)
+        }
     }
 }
 
