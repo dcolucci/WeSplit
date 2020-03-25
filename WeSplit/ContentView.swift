@@ -1,4 +1,4 @@
-// progress: https://www.hackingwithswift.com/books/ios-swiftui/creating-a-form
+// progress: https://www.hackingwithswift.com/books/ios-swiftui/modifying-program-state
 //
 //  ContentView.swift
 //  WeSplit
@@ -10,14 +10,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var tapCount = 0
+
     var body: some View {
-        NavigationView {
-            Form {
-                Section {
-                    Text("Hello World!")
-                }
-            }
-            .navigationBarTitle(Text("What's good New York"), displayMode: .inline)
+        Button("Tap Count: \(tapCount)") {
+            self.tapCount += 1
         }
     }
 }
