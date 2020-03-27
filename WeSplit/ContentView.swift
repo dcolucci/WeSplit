@@ -1,4 +1,4 @@
-// progress: https://www.hackingwithswift.com/books/ios-swiftui/modifying-program-state
+// progress: https://www.hackingwithswift.com/books/ios-swiftui/creating-views-in-a-loop
 //
 //  ContentView.swift
 //  WeSplit
