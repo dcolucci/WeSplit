@@ -1,4 +1,4 @@
-// progress: https://www.hackingwithswift.com/books/ios-swiftui/creating-views-in-a-loop
+// progress: https://www.hackingwithswift.com/books/ios-swiftui/adding-a-segmented-control-for-tip-percentages
 //
 //  ContentView.swift
 //  WeSplit
