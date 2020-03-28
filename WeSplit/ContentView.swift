@@ -1,4 +1,4 @@
-// progress: https://www.hackingwithswift.com/books/ios-swiftui/adding-a-segmented-control-for-tip-percentages
+// progress: https://www.hackingwithswift.com/books/ios-swiftui/calculating-the-total-per-person
 //
 //  ContentView.swift
 //  WeSplit
