@@ -31,7 +31,7 @@ struct ContentView: View {
                         .keyboardType(.decimalPad)
 
                     Picker("Number of People", selection: $numberOfPeople) {
-                        ForEach(2 ..< 100) {
+                        ForEach(2 ..< 100, id: \.self) {
                             Text("\($0)")
                         }
                     }
