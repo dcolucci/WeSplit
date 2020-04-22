@@ -12,15 +12,22 @@ import SwiftUI
 struct ContentView: View {
     @State private var checkAmount = ""
     @State private var numberOfPeople = 0
-    @State private var tipPercentage = 2
+    @State private var tipSelection = 2
     let tipPercentages = [10, 15, 20, 25, 0]
+
+    var tipPercentage: Double {
+        return Double(tipPercentages[tipSelection])
+    }
+
+    var totalWithTip: Double {
+        let checkAmountDouble = Double(checkAmount) ?? 0
+        let tipAbsoluteAmount = checkAmountDouble * tipPercentage / 100
+        return checkAmountDouble + tipAbsoluteAmount
+    }
 
     var totalPerPerson: Double {
         let peopleCount = Double(numberOfPeople + 2)
-        let tipSelection = Double(tipPercentages[tipPercentage])
-        let checkAmountDouble = Double(checkAmount) ?? 0
-        let tipAbsoluteAmount = checkAmountDouble * tipSelection / 100
-        return (checkAmountDouble + tipAbsoluteAmount) / peopleCount
+        return totalWithTip / peopleCount
     }
 
     var body: some View {
@@ -38,7 +45,7 @@ struct ContentView: View {
                 }
 
                 Section(header: Text("Select tip amount")) {
-                    Picker("Tip Percentage", selection: $tipPercentage) {
+                    Picker("Tip Percentage", selection: $tipSelection) {
                         ForEach(0 ..< tipPercentages.count) {
                             Text("\(self.tipPercentages[$0])%")
                         }
@@ -47,8 +54,10 @@ struct ContentView: View {
                 }
 
                 Section {
-                    Text("Amount: $\(totalPerPerson, specifier: "%.2f")")
+                    Text("Total with tip: $\(totalWithTip, specifier: "%.2f")")
+                    Text("Amount per person: $\(totalPerPerson, specifier: "%.2f")")
                 }
+                .foregroundColor(tipPercentage == 0 ? .red : .black)
             }
             .navigationBarTitle("WeSplit")
         }
